@@ -1,0 +1,62 @@
+.poll-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 90%;
+    max-width: 1000px;
+    max-height: 680px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    padding-top: 50px;
+}
+
+.timer-span {
+    position: absolute;
+    right: 30px;
+    top:30px;
+    .circle {
+        position: absolute;
+        padding: 15px;
+        right: -10px ;
+        top: -5px;
+        border-radius: 50%;
+        border: solid 2.5px #f2f120;
+    }
+}
+
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    padding-top: 20px;
+    margin: 10px;
+}
+
+.header-component {
+    padding: 10px;
+}
+
+.q-opt {
+    width: 100%;
+    background: #e1e1e1;
+    border-radius: 8px;
+    text-align: center;
+    padding: 8px;
+    margin: 5px;
+    transition: 0.3s transform ease-in-out;
+    &:hover {
+        background: rgb(184, 60, 60);
+        color: white;
+        transform: scale(0.99);
+    }
+
+    &.is-active {
+        background: rgb(230, 75, 75);
+        color: white;
+    }
+
+}

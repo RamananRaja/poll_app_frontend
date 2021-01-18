@@ -1,0 +1,113 @@
+<div class="centered-content">
+    <div class="operations-container">
+        <!--Display questions-->
+        <div class="columns is-vcentered">
+            <div class="column is-8">
+              <div style="overflow: scroll;">
+                <div *ngFor="let ques of quesArr" >
+                  <p>
+                    <b>
+                      {{ques['qno']}}.
+                    </b>
+                    {{ques['question']}}
+                  </p>
+                  <p>&nbsp;&nbsp; * {{ques['option1']}} </p>
+                  <p>&nbsp;&nbsp; * {{ques['option2']}} </p>
+                  <p>&nbsp;&nbsp; * {{ques['option3']}} </p>
+                  <p>&nbsp;&nbsp; * {{ques['option4']}} </p>
+                </div>
+              </div>
+              <div class="field" style="padding-top: 70%; ">
+                <a class="title is-5" style="padding-top: 6px; position: relative; padding-top: 80%;" routerLink="/result">Go to result page</a>
+                <p class="control" style="padding-top: 10px;">
+                  <button class="button is-link" routerLink="/login">
+                    Log out
+                  </button>
+                </p>
+              </div>
+            </div>
+            <div class="column" style="position: static;">
+              <!--Question number-->
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #qnoInput class="input" type="number" placeholder="Question number">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #questionInput class="input" type="text" placeholder="Question">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #option1Input class="input" type="text" placeholder="Option 1">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #option2Input class="input" type="text" placeholder="Option 2">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #option3Input class="input" type="text" placeholder="Option 3">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input #option4Input class="input" type="text" placeholder="Option 4">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </p>
+              </div>
+                <!--add question-->
+                <div class="field">
+                    <p class="control">
+                      <button class="button is-link" style="width: 75%" (click)="onAddClicked(qnoInput.value, questionInput.value, option1Input.value, option2Input.value, option3Input.value, option4Input.value)" >
+                        Add question
+                      </button>
+                    </p>
+                </div>
+                <!--delete question-->
+                <div class="field">
+                    <p class="control">
+                      <button class="button is-link" style="width: 75%" (click)="onDeleteClicked(qnoInput.value)">
+                        Delete question
+                      </button>
+                    </p>
+                </div>
+                <!--update question-->
+                <div class="field">
+                    <p class="control">
+                      <button class="button is-link" style="width: 75%" (click)="onUpdateClicked(qnoInput.value, questionInput.value, option1Input.value, option2Input.value, option3Input.value, option4Input.value)">
+                        Update question
+                      </button>
+                    </p>
+                </div>
+                <div class="field">
+                  <p class="control">
+                    <button class="button is-link" style="width: 75%" (click)="onDisplayClicked()">
+                      Display question
+                    </button>
+                  </p>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
